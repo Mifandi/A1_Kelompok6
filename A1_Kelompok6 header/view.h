@@ -19,11 +19,9 @@
 
 void readAbsen(Absen** head);
 
-// Variabel global yang digunakan untuk menyimpan alamat dari linked list Absen dan jumlah karyawan yang sudah melakukan absensi
 extern Absen *Kepala;
 extern int jumlahHadir;
 
-// Fungsi untuk menampilkan data karyawan dan memberikan opsi pengelolaannya
 void viewKaryawan(Akun *head){
     system("cls");
     int counter = 1;
@@ -90,7 +88,7 @@ void viewKaryawan(Akun *head){
                 }else{
                     if (current != NULL){
                         system("cls");
-                        tampil = 5;
+                        tampil = 10;
                         corY = 3;
                     }
                 }
@@ -147,13 +145,12 @@ void viewKaryawan(Akun *head){
     }
 }
 
-// Fungsi untuk menampilkan data absensi karyawan dan memberikan opsi pengelolaannya
 void viewAbsen(Absen *head){
     system("cls");
     int counter = 1;
     int corY = 3;
     int corX = 15;
-    int tampil = 5;
+    int tampil = 10;
     int jumlah = 0;
     int code = 0;
     int LimitBawah = 4;
@@ -232,7 +229,7 @@ void viewAbsen(Absen *head){
             if (counter == 2){
                 system("cls");
                 corY = 3;
-                tampil = 5;
+                tampil = 10;
                 current = head;
                 jumlah = 0;
             }
@@ -245,7 +242,7 @@ void viewAbsen(Absen *head){
                 shellSort(Kepala, 1);
                 corY = 3;
                 jumlah = 0;
-                tampil = 5;
+                tampil = 10;
                 current = head;
             }
             if (counter == Hidden2){
@@ -253,7 +250,7 @@ void viewAbsen(Absen *head){
                 shellSort(Kepala, 2);
                 corY = 3;
                 jumlah = 0;
-                tampil = 5;
+                tampil = 10;
                 current = head;
             }
             if (counter == Hidden3){
@@ -261,7 +258,7 @@ void viewAbsen(Absen *head){
                 shellSort2(Kepala, 1);
                 corY = 3;
                 jumlah = 0;
-                tampil = 5;
+                tampil = 10;
                 current = head;
             }
             if (counter == Hidden4){
@@ -269,7 +266,7 @@ void viewAbsen(Absen *head){
                 shellSort2(Kepala, 2);
                 corY = 3;
                 jumlah = 0;
-                tampil = 5;
+                tampil = 10;
                 current = head;
             }
             if (counter == Hidden5){
