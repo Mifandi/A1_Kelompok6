@@ -14,10 +14,12 @@
 
 using namespace std;
 
+// Fungsi untuk mengatur warna teks di konsol
 void color(int color){
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),color);
 }
 
+// Fungsi untuk memindahkan kursor ke posisi tertentu di layar
 void gotoxy(int x, int y){
     COORD c;
     c.X=x + 30;
@@ -25,6 +27,7 @@ void gotoxy(int x, int y){
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),c);
 }
 
+// Fungsi untuk menampilkan teks dengan indikator dan kondisi
 void display(int x, int y,string indicator, string text, bool kondisi){
     gotoxy(x, y);
     if (kondisi){
@@ -36,6 +39,7 @@ void display(int x, int y,string indicator, string text, bool kondisi){
     }
 }
 
+// Fungsi untuk menampilkan teks dengan penyorotan berdasarkan kondisi dan warna kustom
 void display(int x, int y,string indicator, string text, bool kondisi,int custom){
     gotoxy(x, y);
     if (kondisi){
@@ -47,6 +51,7 @@ void display(int x, int y,string indicator, string text, bool kondisi,int custom
     }
 }
 
+// Menampilkan opsi pengeditan teks dengan indikator, teks, dan atribut tertentu pada posisi layar tertentu
 void displayEdit(int x, int y,string indicator, string text, string att, bool kondisi){
     gotoxy(x, y);
     if (kondisi){
@@ -58,6 +63,7 @@ void displayEdit(int x, int y,string indicator, string text, string att, bool ko
     }
 }
 
+// Menampilkan opsi pengeditan teks dengan indikator, teks, dan atribut tertentu pada posisi layar tertentu
 void displayEdit(int x, int y,string indicator, string text, int att, string satuan, bool kondisi){
     gotoxy(x, y);
     if (kondisi){
@@ -69,12 +75,14 @@ void displayEdit(int x, int y,string indicator, string text, int att, string sat
     }
 }
 
+// Fungsi untuk membersihkan tampilan pada layar konsol
 void cleaner (int max,int n, int horz, int vert) {
     for (int i = 0; i <= max;i++){
         gotoxy(horz, vert + i);cout<<string(n + 1, ' ');
     }
 }
 
+// Fungsi untuk mereset data absensi karyawan
 void ResetAbsen(Akun **head){
     Akun *temp = (*head);
     while (temp != NULL){
@@ -86,6 +94,7 @@ void ResetAbsen(Akun **head){
 	Simpan(Head);
 }
 
+// Fungsi untuk mengatur tanggal untuk setiap karyawan
 void tanggal(Akun **head) {
     time_t sekarang = time(0);
     tm* waktu = localtime(&sekarang);
@@ -118,11 +127,12 @@ void tanggal(Akun **head) {
     }
 }
 
-void clear(Akun** head){ 
-    *head = NULL;        
+void clear(Akun** head){ //Berfungsi untk menghapus semua isi linked list
+    *head = NULL;        //Untuk refresh data
     return;
 }
 
+// Fungsi untuk validasi login berdasarkan username dan password
 bool validasiLogin(const string& username, const string& password) {
     Akun* current = Head;
     while (current != NULL) {
@@ -135,6 +145,7 @@ bool validasiLogin(const string& username, const string& password) {
     return false;
 }
 
+// Fungsi untuk validasi keunikan username
 bool validasiUsername(const string& username) {
     Akun* current = Head;
     while (current != NULL) {
@@ -147,6 +158,7 @@ bool validasiUsername(const string& username) {
     return true;
 }
 
+// Fungsi untuk menyesuaikan pointer 'prev' dari setiap node pada linked list
 void fixPrev(Akun **head , Akun **tail){
     if (*head == NULL){
         return;
@@ -162,6 +174,7 @@ void fixPrev(Akun **head , Akun **tail){
     (*tail)->next = NULL;
 }
 
+// Fungsi untuk menyesuaikan ID karyawan pada linked list
 void fixID(Akun **head){
     Akun* current = *head;
     int newID = 1;
@@ -172,13 +185,13 @@ void fixID(Akun **head){
     }
 }
 
-void clear(Node** head){ 
-    *head = NULL;        
+void clear(Node** head){ //Berfungsi untk menghapus semua isi linked list
+    *head = NULL;        //Untuk refresh data
     return;
 }
 
-void clear(Absen** head){ 
-    *head = NULL;        
+void clear(Absen** head){ //Berfungsi untk menghapus semua isi linked list
+    *head = NULL;        //Untuk refresh data
     return;
 }
 

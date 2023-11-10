@@ -19,9 +19,11 @@
 
 void readAbsen(Absen** head);
 
+// Variabel global yang digunakan untuk menyimpan alamat dari linked list Absen dan jumlah karyawan yang sudah melakukan absensi
 extern Absen *Kepala;
 extern int jumlahHadir;
 
+// Fungsi untuk menampilkan data karyawan dan memberikan opsi pengelolaannya
 void viewKaryawan(Akun *head){
     system("cls");
     int counter = 1;
@@ -145,6 +147,7 @@ void viewKaryawan(Akun *head){
     }
 }
 
+// Fungsi untuk menampilkan data absensi karyawan dan memberikan opsi pengelolaannya
 void viewAbsen(Absen *head){
     system("cls");
     int counter = 1;

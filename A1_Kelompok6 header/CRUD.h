@@ -22,7 +22,7 @@ string inputnama,inputpassword,kalender;
 char pilih;
 int index_user,lastday;
 
-
+// Fungsi-fungsi utilitas
 void color(int color);
 void gotoxy(int x, int y);
 void display(int x, int y,string indicator, string text, bool kondisi);
@@ -44,12 +44,16 @@ void Simpan(Akun *simpan);
 
 void viewKaryawan(Akun *head);
 
+// Variabel pointer ke node pertama dari list karyawan
 extern Akun *Head;
+// Variabel pointer ke node terakhir dari list karyawan
 extern Akun *Tail; 		
-
+// Jumlah total karyawan
 extern int jumlahKaryawan; 	
+// Jumlah total Hadir
 extern int jumlahHadir;		
 
+// Fungsi untuk menciptakan node baru karyawan
 Akun *KaryawanBaru(int ID,string USERNAME, string PASSWORD, string NAMA, string JABATAN,string ALAMAT,
 long long NIK, string NOTELP, long long GAJI) {
 	Akun *newKaryawan = new Akun;
@@ -68,6 +72,7 @@ long long NIK, string NOTELP, long long GAJI) {
 	return newKaryawan;
 }
 
+// Fungsi untuk menambahkan node karyawan ke awal daftar karyawan atau add first
 void tambahPertama(Akun **head,int ID,string USERNAME, string PASSWORD, string NAMA, string JABATAN,string ALAMAT,
 long long NIK, string NOTELP, long long GAJI){
 	Akun *FirstNewKaryawan = KaryawanBaru(ID,USERNAME, PASSWORD, NAMA, JABATAN, ALAMAT, NIK, NOTELP, GAJI);
@@ -90,6 +95,7 @@ long long NIK, string NOTELP, long long GAJI){
     Simpan(Head);
 }
 
+// Fungsi untuk menambahkan data karyawan
 void tambah() {
     int bawah;
     int khusus1;
@@ -214,6 +220,7 @@ void tambah() {
     }
 }
 
+// Fungsi untuk memperbarui data karyawan
 void update(Akun **head, int akun, string code){
     int counterAdmin1 = 0;
     int counterAdmin2 = 0;
@@ -397,6 +404,7 @@ void update(Akun **head, int akun, string code){
     }
 }
 
+// Fungsi untuk menghapus data karyawan
 void hapus(Akun **head, string posisi) {
     if (*head == NULL){
         system("cls");
@@ -450,7 +458,7 @@ void hapus(Akun **head, string posisi) {
     Sleep(1000);
 }
 
-
+// Fungsi untuk mencari node pada indeks tertentu dalam linked list Absen
 Absen *findNode(Absen *head, int idx)
 {
     for (int a = 0; a < idx; a++)
@@ -460,6 +468,7 @@ Absen *findNode(Absen *head, int idx)
     return head;
 }
 
+// Fungsi untuk mengurutkan linked list Absen berdasarkan nama dengan algoritma Shell Sort
 void shellSort(Absen *head, int code){
     for (int gap = jumlahHadir / 2; gap > 0; gap /= 2)
     {
@@ -496,7 +505,7 @@ void shellSort(Absen *head, int code){
     }
 }
 
-
+// Fungsi untuk mengurutkan linked list Absen berdasarkan jam dengan algoritma Shell Sort
 void shellSort2(Absen *head, int code){
     for (int gap = jumlahHadir / 2; gap > 0; gap /= 2)
     {
@@ -535,7 +544,7 @@ void shellSort2(Absen *head, int code){
 
 const int NO_OF_CHARS = 256;
 
-
+// Mengonversi string menjadi huruf kecil
 string toLowerCase(string str) {
     for (char &c : str) {
         c = tolower(c);
@@ -543,6 +552,7 @@ string toLowerCase(string str) {
     return str;
 }
 
+// Membuat heuristik untuk pencarian pola
 void badCharHeuristic(const string& str, int size, int badChar[NO_OF_CHARS]) {
     for (int i = 0; i < NO_OF_CHARS; i++) {
         badChar[i] = -1;
@@ -552,6 +562,7 @@ void badCharHeuristic(const string& str, int size, int badChar[NO_OF_CHARS]) {
     }
 }
 
+// Algoritma pencarian string
 int BoyerMoore(Akun* head, const string& pat, int corx, int cory) {
     bool found = false;
 

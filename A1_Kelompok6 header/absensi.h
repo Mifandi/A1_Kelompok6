@@ -17,8 +17,10 @@
 #include "CRUD.h"
 #include "lamaran.h"
 
+// Eksternal variable untuk menyimpan jumlah kehadiran
 extern int jumlahHadir;
 
+// Fungsi menuAbsen untuk melakukan proses absensi karyawan
 void menuAbsen (Akun **head, int akun) {
     system("cls");
     int counter = 1;
