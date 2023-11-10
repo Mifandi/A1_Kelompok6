@@ -6,6 +6,7 @@
 
 using namespace std;    
 
+// Struktur data untuk menyimpan absensi karyawan
 struct Absen {
     string nama;
     string kehadiran;
@@ -14,6 +15,7 @@ struct Absen {
     Absen* next = NULL;
 };
 
+// Struktur data untuk menyimpan informasi karyawan
 struct DataAkun {
     string nama;
     long long nik;
@@ -26,6 +28,7 @@ struct DataAkun {
     string jam;
 };
 
+// Struktur data untuk merepresentasikan akun karyawan
 struct Akun {
     int id;
     string username;
@@ -35,6 +38,7 @@ struct Akun {
     Akun* prev = NULL;
 };
 
+// Struktur data untuk menyimpan informasi personal
 struct Node {
     string nama;
     string alamat;    
