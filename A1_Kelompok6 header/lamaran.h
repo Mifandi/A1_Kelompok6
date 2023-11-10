@@ -5,22 +5,16 @@
 #include "CRUD.h"
 #include "data.h"
 
-// Variabel global untuk menyimpan linked list sementara selama proses pendaftaran lamaran
 Node* save = NULL;  
 
-// Variabel eksternal yang menyimpan linked list lamaran yang dibaca dari file
 extern Node* Front;
-
-// Variabel eksternal yang menyimpan pointer ke node terakhir pada linked list lamaran
 extern Node* Rear;
 
-// Variabel eksternal untuk menyimpan jumlah karyawan pada sistem
 extern int jumlahKaryawan;
 
 void clear(Node** head);
 void cleaner (int max,int n, int horz, int vert);
 
-// Fungsi untuk menyimpan data pelamar ke dalam file Pelamar.csv
 void SimpanLamar(Node *simpan){
     fstream file;
     file.open("A1_Kelompok6 datafolder/Pelamar.csv",ios::out | ios::trunc);
@@ -38,7 +32,6 @@ void SimpanLamar(Node *simpan){
     file.close();
 }
 
-// Fungsi untuk membaca data pelamar dari file Pelamar.csv
 void readLamar(Node **front, Node **rear){
     string data;
     string namas;
@@ -82,7 +75,6 @@ void readLamar(Node **front, Node **rear){
     }
 }
 
-// Fungsi untuk menangani proses pendaftaran lamaran pekerjaan
 void lamar(Node **front, Node **rear){
     system("cls");
     int counter = 1;
@@ -215,7 +207,6 @@ void lamar(Node **front, Node **rear){
     }
 }
 
-// Fungsi untuk menghapus node pertama pada linked list lamaran
 void dequeue(Node** front, Node** rear){
 	if (*front == NULL) {
 		return;
@@ -230,7 +221,6 @@ void dequeue(Node** front, Node** rear){
 	}
 }
 
-// Fungsi untuk mengecek daftar pelamar yang tersedia
 void cekPelamar(Node *front) {
     system("cls");
 	if (front == NULL) {

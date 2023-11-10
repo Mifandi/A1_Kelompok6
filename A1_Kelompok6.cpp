@@ -24,27 +24,23 @@ void menuUser(int akun);
 void menuAdmin();
 void Simpan(Akun *simpan);
 
-// Pointer ke awal linked list data karyawan
+
 Akun *Head = NULL;
-// Pointer ke akhir linked list data karyawan    
 Akun *Tail = NULL;
 
-// Pointer ke awal linked list data lamaran pekerjaan
+
 Node* Front = NULL;
-// Pointer ke akhir linked list data lamaran pekerjaan 
 Node* Rear = NULL;
 
-// Pointer ke awal linked list data absensi karyawan
 Absen* Kepala = NULL;
 
 int jumlahKaryawan;   
 int jumlahHadir; 
 
-// Fungsi untuk menyimpan data karyawan ke dalam file CSV
+
 void Simpan(Akun* simpan) {
     fstream file;
     file.open("A1_Kelompok6 datafolder/Database.csv", ios::out | ios::trunc);
-    
     while (simpan != NULL) {
         file << simpan->id << ",";
         file << simpan->username << ",";
@@ -63,7 +59,7 @@ void Simpan(Akun* simpan) {
     file.close();
 }
 
-// Fungsi untuk membaca data karyawan dari file CSV dan membangun linked list
+
 void BacaFile(Akun** head, Akun** tail){
 	jumlahKaryawan = 0;
     clear(head);
@@ -124,7 +120,7 @@ void BacaFile(Akun** head, Akun** tail){
 	}
 }
 
-// Fungsi untuk membaca data kehadiran karyawan dari file CSV dan membangun linked list
+
 void readAbsen(Absen** head){
     clear(head);
 	jumlahHadir = 0;
@@ -164,7 +160,6 @@ void readAbsen(Absen** head){
 	}
 }
 
-// Fungsi untuk login admin
 void loginAdmin() {
 	system("cls");
 	int counter = 1;
@@ -231,7 +226,6 @@ void loginAdmin() {
 	}
 }
 
-// Fungsi untuk login user
 void loginUser(Akun *head) {
 	system("cls");
 	int counter = 1;
@@ -306,7 +300,6 @@ void loginUser(Akun *head) {
 	}
 }
 
-// Fungsi untuk menu admin
 void menuAdmin (){
 	int counter = 1;
 	system("cls");
@@ -360,7 +353,6 @@ void menuAdmin (){
     }
 }
 
-// Fungsi untuk menu user
 void menuUser(int akun) {
 	system("cls");
 	int counter = 1;
@@ -407,7 +399,6 @@ void menuUser(int akun) {
 	}
 }
 
-// Fungsi untuk menu awal ketika program di jalankan pertama kali
 void menuAwal() {
     system("cls");
     int counter = 1;
