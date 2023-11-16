@@ -9,15 +9,15 @@ Selamat datang di manual book resmi Ifandi's Taste! Dokumen ini dibuat untuk mem
 3. [Bimasakti Cahyo Utomo](https://github.com/bimacahyosaktiutomo)
 
 ## Daftar Isi
-1. [Tipe Pengguna]
-   - 1.1 [Admin]
-   - 1.2 [User Terdaftar]
-   - 1.3 [Guest]
-2. [Berbagi Resep]
-   - 2.1 [Menambah Resep]
-   - 2.2 [Mengelola Resep]
-3. [Eksplorasi Resep]
-   - 3.1 [Pencarian Resep]
+1. Tipe Pengguna
+   - 1.1 Admin
+   - 1.2 User Terdaftar
+   - 1.3 Guest
+2. Berbagi Resep
+   - 2.1 Menambah Resep
+   - 2.2 Mengelola Resep
+3. Eksplorasi Resep
+   - 3.1 Pencarian Resep
 
 ## 1. Tipe Pengguna
 Ifandi's Taste memiliki tiga tipe pengguna utama. Berikut adalah penjelasan singkat untuk setiap tipe pengguna.
